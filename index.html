@@ -1,155 +1,223 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Real Cash - বিশ্বস্ত গেম্বলিং ওয়েবসাইট</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Real Cash - Casinoworld Bangladesh</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=SolaimanLipi&display=swap');
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #000;
-      background-image: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.03) 31px),
-                        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.03) 31px),
-                        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px),
-                        repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px);
+      font-family: 'SolaimanLipi', Arial, sans-serif;
+      background: #111;
       overflow-x: hidden;
       color: white;
       position: relative;
+      min-height: 100vh;
     }
 
-    .falling-text {
-      position: absolute;
-      top: -30px;
-      font-size: 14px;
-      font-weight: bold;
-      animation: rain 6s linear infinite;
+    /* Background repeated Real Cash small text */
+    body::before {
+      content: "Real Cash Real Cash Real Cash Real Cash Real Cash Real Cash Real Cash Real Cash";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      font-size: 12px;
+      color: rgba(255,255,255,0.05);
+      letter-spacing: 4px;
+      line-height: 24px;
+      white-space: pre-wrap;
+      z-index: 0;
       pointer-events: none;
+      user-select: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding: 8px;
+      opacity: 0.1;
     }
 
-    @keyframes rain {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
+    /* Container for content */
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 480px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.8);
+      border-radius: 12px;
+      padding: 20px 15px 60px;
+      box-shadow: 0 0 12px rgba(0,255,200,0.6);
     }
 
     h1 {
+      font-weight: 700;
+      font-size: 2.2rem;
       text-align: center;
-      margin-top: 20px;
-      color: #ffcc00;
-      font-size: 36px;
+      margin-bottom: 10px;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
     }
 
-    .container {
+    /* 7 links container */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0 30px;
+    }
+
+    /* Each link style with site color */
+    .link-btn {
+      flex: 1 1 45%;
+      min-width: 140px;
+      padding: 12px 8px;
+      font-weight: 600;
+      font-size: 1rem;
       text-align: center;
-      padding: 20px;
-    }
-
-    .highlight-box {
-      border: 2px solid #ff5050;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 15px auto;
-      max-width: 90%;
-      background-color: #1a1a1a;
-      color: #ffcccc;
-      font-weight: bold;
-    }
-
-    .highlight-box.green {
-      border-color: #33cc33;
-      color: #ccffcc;
-    }
-
-    .button {
-      display: block;
-      width: 80%;
-      margin: 10px auto;
-      padding: 12px;
-      color: white;
-      border: none;
       border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      animation: pulse 2s infinite;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: white;
+      user-select: none;
+      text-decoration: none;
+      box-shadow: 0 0 8px transparent;
+    }
+
+    .link-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #fff;
+    }
+
+    /* Site specific colors */
+    .mcw { background: #2e9afe; }        /* Blue */
+    .banglawin { background: #f39c12; }  /* Orange */
+    .bengalbet { background: #27ae60; }  /* Green */
+    .superbaji { background: #9b59b6; }  /* Purple */
+    .jeetway { background: #e74c3c; }    /* Red */
+    .bangalslots { background: #d35400; }/* Dark Orange */
+    .jeetbangla { background: #2980b9; } /* Dark Blue */
+
+    /* Live Support button */
+    .live-support {
+      display: block;
+      width: 180px;
+      margin: 0 auto 30px;
+      padding: 10px 12px;
+      background: #1abc9c;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 0 12px #1abc9c;
+      transition: background 0.3s ease;
       text-decoration: none;
     }
-
-    .button:nth-of-type(1) { background-color: #e60000; }
-    .button:nth-of-type(2) { background-color: #ff8000; }
-    .button:nth-of-type(3) { background-color: #009900; }
-    .button:nth-of-type(4) { background-color: #0066cc; }
-    .button:nth-of-type(5) { background-color: #cc33ff; }
-    .button:nth-of-type(6) { background-color: #ff1493; }
-    .button:nth-of-type(7) {background-color: #ff1300; }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+    .live-support:hover {
+      background: #16a085;
+      box-shadow: 0 0 16px #16a085;
     }
 
-    .support {
-      margin-top: 20px;
-      font-size: 16px;
-      border: 2px solid #87CEEB;
-      display: inline-block;
-      padding: 8px 12px;
+    /* Bottom border text */
+    .bottom-text {
+      max-width: 480px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 1rem;
+      border: 2px solid #0ff;
+      padding: 10px 15px;
       border-radius: 10px;
-      color: #87CEEB;
-      font-weight: bold;
-      cursor: pointer;
+      font-weight: 600;
+      color: #0ff;
+      box-shadow: 0 0 10px #0ff;
     }
 
-    .realcash-bg {
+    /* Money rain animation container */
+    .money-rain {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 5;
+    }
+
+    /* Single money drop */
+    .money-drop {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0; left: 0;
-      background-image: repeating-linear-gradient(0deg, transparent, transparent 30px),
-                        repeating-linear-gradient(90deg, transparent, transparent 30px),
-                        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px);
-      z-index: 0;
+      top: -40px;
+      font-size: 18px;
+      color: gold;
+      text-shadow: 0 0 4px #ff0;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      user-select: none;
     }
 
-    .falling-text:nth-child(1) { left: 08%; animation-delay: 0s; color: #ff0000; }
-    .falling-text:nth-child(2) { left: 20%; animation-delay: 1s; color: #ff8000; }
-    .falling-text:nth-child(3) { left: 30%; animation-delay: 2s; color: #00ff00; }
-    .falling-text:nth-child(4) { left: 40%; animation-delay: 3s; color: #00ccff; }
-    .falling-text:nth-child(5) { left: 55%; animation-delay: 1.5s; color: #cc00ff; }
-    .falling-text:nth-child(6) { left: 68%; animation-delay: 2.5s; color: #ff1493; }
-    .falling-text:nth-child(7) { left: 85%; animation-delay: 3.3s; color: #00ff20; }
+    /* Fall animation */
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <div class="container" role="main" aria-label="Real Cash links and live support">
+    <h1>Real Cash</h1>
 
-  <div class="falling-text">MCW</div>
-  <div class="falling-text">JeetBangla</div>
-  <div class="falling-text">JetWay</div>
-  <div class="falling-text">SuperBaji</div>
-  <div class="falling-text">BanglaWin</div>
-  <div class="falling-text">BengalBet</div>
-  <div class="falling-text">banglaslots</div>
-  <h1>Real Cash</h1>
-
-  <div class="container">
-
-    <div class="highlight-box">
-      📌 রেজিস্টার করতে নিচের বাটনে ট্যাপ করুন
+    <div class="links" role="list">
+      <a href="https://www.casinomcw.com/af/UnY2xp17/Welcome" target="_blank" class="link-btn mcw" role="listitem" aria-label="MCW link">MCW</a>
+      <a href="https://banglawin24.com/af/12345/join" target="_blank" class="link-btn banglawin" role="listitem" aria-label="Banglawin link">Banglawin</a>
+      <a href="https://bgb552291492aff.com/af/Lv5lgvX1/join" target="_blank" class="link-btn bengalbet" role="listitem" aria-label="Bengalbet link">Bengalbet</a>
+      <a href="https://superbaji.fun/af/XLrC8uwC/join" target="_blank" class="link-btn superbaji" role="listitem" aria-label="Superbaji link">Superbaji</a>
+      <a href="https://jeetway.me/af/so1W4ay3/join" target="_blank" class="link-btn jeetway" role="listitem" aria-label="Jeetway link">Jeetway</a>
+      <a href="https://bslotsaff99889.com" target="_blank" class="link-btn bangalslots" role="listitem" aria-label="Bangalslots link">Bangalslots</a>
+      <a href="https://jeetbangla.online/af/0ax2jNU6/join" target="_blank" class="link-btn jeetbangla" role="listitem" aria-label="Jeetbangla link">Jeetbangla</a>
     </div>
 
-    <div class="highlight-box green">
-      ✅ রেজিস্ট্রেশনের পর 📱মোবাইল নাম্বার ও 📥ইমেইল ভেরিফাই করে বোনাস নিন
-    </div>
+    <a href="https://t.me/Realcashappearn" target="_blank" class="live-support" role="button" aria-label="Live Support Telegram">Live Support</a>
 
-    <!-- 7 affiliate buttons -->
-    <a class="button" href="https://jeetbangla.online/af/0ax2jNU6/join" target="_blank">🎯 JeetBangla</a>
-    <a class="button" href="https://bgb552291492aff.com/af/Lv5lgvX1/join" target="_blank">🎯 BengalBet</a>
-    <a class="button" href="https://www.casinomcw.com/af/UnY2xp17/Welcome" target="_blank">🎯 MCW</a>
-    <a class="button" href="https://jeetway.me/af/so1W4ay3/join" target="_blank">🎯 JeetWay</a>
-    <a class="button" href="https://superbaji.fun/af/XLrC8uwC/join" target="_blank">🎯 SuperBaji</a>
-    <a class="button" href="https://bnwnaff332244.com/af/Q3wfx9x5/join" target="_blank">🎯 BanglaWin</a>
-    <a class="button" herf=""https://bslotsaff99889.com/af/b6fiHFvU/join" target="_blank">🎯 Banglaslots</a>
+  </div>
+
+  <div class="bottom-text" aria-live="polite" aria-atomic="true">
+    মোবাইল নম্বর ও ইমেইল ভেরিফাই করে বোনাস নিন
+  </div>
+
+  <div class="money-rain" aria-hidden="true"></div>
+
+  <script>
+    // Create multiple money drops for rain effect
+    const rainContainer = document.querySelector('.money-rain');
+    const moneySymbol = "৳";  // Taka symbol
+    const dropsCount = 40;
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    for(let i=0; i < dropsCount; i++){
+      const drop = document.createElement('div');
+      drop.classList.add('money-drop');
+      drop.textContent = moneySymbol;
+      drop.style.left = random(0, 100) + 'vw';
+      drop.style.animationDuration = random(4, 10) + 's';
+      drop.style.fontSize = random(14, 28) + 'px';
+      drop.style.animationDelay = random(0, 10) + 's';
+      rainContainer.appendChild(drop);
+    }
+  </script>
+</body>
+        </html>
     
     <!-- Live Support -->
     <div class="support" onclick="window.open('https://t.me/Realcashapperan', '_blank')">
